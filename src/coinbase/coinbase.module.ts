@@ -1,10 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RecapituatifComponent} from "./recapituatif/recapituatif.component";
-import {MatNativeDateModule} from "@angular/material/core";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import {CdkAccordionModule} from "@angular/cdk/accordion";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -17,9 +16,7 @@ import {CdkAccordionModule} from "@angular/cdk/accordion";
     CommonModule,
     FormsModule,
     HttpClientModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    CdkAccordionModule,
+    MatTableModule,
   ]
 })
 export class CoinbaseModule {

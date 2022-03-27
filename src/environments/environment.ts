@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  back_server_url: 'http://localhost',
+  back_server_port: '8080',
+  coinbase: {
+    base_url : '/api/v1/coinbase'
+  }
 };
 
 /*
