@@ -5,8 +5,17 @@
 
   <!-- Position Column -->
   <ng-container matColumnDef="accountId">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.accountId}} </td>
+    <th mat-header-cell *matHeaderCellDef> Crypto </th>
+    <td mat-cell *matCellDef="let element">
+      <div fxLayout="row" fxLayoutAlign="start center" >
+        <img *ngIf="element.iconUrl" class="accountIcon" src="{{element.iconUrl}}">
+        <div *ngIf="!element.iconUrl" class="defaultAccountIcon"><fa-icon [icon]="defaultAccountIcon" transform="grow-9" [styles]="{'stroke': '#bdc3c7', 'color': '#bdc3c7'}"></fa-icon></div>
+        <div fxLayout="column" fxLayoutAlign="center start" >
+          <span class="accountId">{{element.accountId}}</span>
+          <span class="accountName">{{element.accountName}}</span>
+        </div>
+      </div>
+    </td>
   </ng-container>
 
   <!-- Name Column -->

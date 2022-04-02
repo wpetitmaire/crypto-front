@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {CoinbaseRecap} from "../interfaces/recapitulatif.interface";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 /**
@@ -20,7 +20,10 @@ export class RecapitulatifService {
 
   getGlobalRecap(): Observable<CoinbaseRecap[]> {
     console.log("--> RecapitulatifService.getGlobalRecap()")
-    return this.http.get<CoinbaseRecap[]>(`${RecapitulatifService.SERVER_URL}${RecapitulatifService.GET_RECAP_URL}`);
+
+    const params = new HttpParams().set('withoutEmptyAccounts', true);
+
+    return this.http.get<CoinbaseRecap[]>(`${RecapitulatifService.SERVER_URL}${RecapitulatifService.GET_RECAP_URL}`, { params });
   }
 
 }

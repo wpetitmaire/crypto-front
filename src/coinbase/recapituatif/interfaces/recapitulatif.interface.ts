@@ -9,7 +9,9 @@ interface PriceHistory {
 }
 
 export interface CoinbaseRecap {
+  iconUrl: String,
   accountId: String,
+  accountName: String,
   unitPrice: Number,
   unitPriceDeltaVariation: Number,
   amount: Number,
