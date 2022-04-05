@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CoinbaseRecap} from "./interfaces/recapitulatif.interface";
 import {RecapitulatifService} from "./services/recapitulatif.service";
-import {faPiggyBank} from '@fortawesome/free-solid-svg-icons';
+import {faPiggyBank, faArrowTrendDown, faArrowTrendUp} from '@fortawesome/free-solid-svg-icons';
 
 export interface PeriodicElement {
   name: string;
@@ -36,6 +36,8 @@ export class RecapituatifComponent implements OnInit {
   displayedColumns: string[] = ['accountId', 'unitPrice', 'amount', 'amountPrice'];
   dataSource = ELEMENT_DATA;
   defaultAccountIcon = faPiggyBank;
+  faArrowTrendDown = faArrowTrendDown;
+  faArrowTrendUp = faArrowTrendUp;
 
   globalRecap = new Array<CoinbaseRecap>();
 

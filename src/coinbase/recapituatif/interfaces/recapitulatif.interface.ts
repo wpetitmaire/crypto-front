@@ -14,8 +14,10 @@ export interface CoinbaseRecap {
   accountName: String,
   unitPrice: Number,
   unitPriceDeltaVariation: Number,
+  unitPriceVariationPourcentage: Number,
   amount: Number,
   amountPrice: Number,
   amountPriceDeltaVariation: Number,
+  amountPriceVariationPourcentage: Number,
   weekHistory: PriceHistory[]
 }
