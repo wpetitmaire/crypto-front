@@ -17,7 +17,5 @@ export interface CoinbaseRecap {
   unitPriceVariationPourcentage: Number,
   amount: Number,
   amountPrice: Number,
-  amountPriceDeltaVariation: Number,
-  amountPriceVariationPourcentage: Number,
   weekHistory: PriceHistory[]
 }

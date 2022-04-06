@@ -1,9 +1,8 @@
+<kpi></kpi>
+
 <table mat-table [dataSource]="globalRecap" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
+  <!-- Column currency icon + symbol + name -->
   <ng-container matColumnDef="accountId">
     <th mat-header-cell *matHeaderCellDef> Crypto </th>
     <td mat-cell *matCellDef="let element">
@@ -18,7 +17,7 @@
     </td>
   </ng-container>
 
-  <!-- Name Column -->
+  <!-- Unit price column + % variation  -->
   <ng-container matColumnDef="unitPrice">
     <th mat-header-cell *matHeaderCellDef> Price </th>
     <td mat-cell *matCellDef="let element">
@@ -33,13 +32,13 @@
     </td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- Amount column-->
   <ng-container matColumnDef="amount">
     <th mat-header-cell *matHeaderCellDef> Quantité </th>
     <td mat-cell *matCellDef="let element"> {{element.amount | number:'1.1-12'}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- Amount price -->
   <ng-container matColumnDef="amountPrice">
     <th mat-header-cell *matHeaderCellDef> Price </th>
     <td mat-cell *matCellDef="let element">{{element.amountPrice | currency:'EUR'}}</td>

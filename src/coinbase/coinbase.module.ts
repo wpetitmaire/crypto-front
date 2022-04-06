@@ -6,10 +6,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {UtilsModule} from "../Utils/Utils.module";
 
 @NgModule({
   declarations: [
-    RecapituatifComponent
+    RecapituatifComponent,
   ],
   exports: [
     RecapituatifComponent
@@ -20,7 +21,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     HttpClientModule,
     MatTableModule,
     FlexLayoutModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    UtilsModule
   ]
 })
 export class CoinbaseModule {
