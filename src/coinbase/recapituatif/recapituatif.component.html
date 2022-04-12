@@ -1,4 +1,11 @@
-<kpi></kpi>
+
+<div fxLayout="row" fxLayoutAlign="space-between none" >
+  <kpi *ngIf="walletRecap" [libel]="'Profit/Perte'" [value]="walletRecap.walletBalanceWithoutFees" [type]="kpiType.Money" ></kpi>
+  <kpi *ngIf="walletRecap" [libel]="'Total achat'" [value]="walletRecap.buyTotal" [type]="kpiType.Money" ></kpi>
+  <kpi *ngIf="walletRecap" [libel]="'Total vente'" [value]="walletRecap.sellTotal" [type]="kpiType.Money" ></kpi>
+  <kpi *ngIf="walletRecap" [libel]="'Frais'" [value]="walletRecap.feeTotal" [type]="kpiType.Money" ></kpi>
+  <kpi *ngIf="walletRecap" [libel]="'Bilan'" [value]="walletRecap.walletBalance" [type]="kpiType.Money" ></kpi>
+</div>
 
 <table mat-table [dataSource]="globalRecap" class="mat-elevation-z8">
 

@@ -19,3 +19,12 @@ export interface CoinbaseRecap {
   amountPrice: Number,
   weekHistory: PriceHistory[]
 }
+
+export interface WalletRecap {
+  id: string,
+  buyTotal: number,
+  sellTotal: number,
+  feeTotal: number,
+  walletBalance: number,
+  walletBalanceWithoutFees: number
+}

@@ -1,3 +1,4 @@
 <mat-card class="kpi-card">
-<mat-card-title>Profit/Perte</mat-card-title>
+<mat-card-title>{{libel}}</mat-card-title>
+<mat-card-content *ngIf="type == kpiTypes.Money">{{value | currency: 'EUR'}}</mat-card-content>
 </mat-card>
