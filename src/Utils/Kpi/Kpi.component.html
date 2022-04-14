@@ -1,4 +1,4 @@
 <mat-card class="kpi-card">
 <mat-card-title>{{libel}}</mat-card-title>
-<mat-card-content *ngIf="type == kpiTypes.Money">{{value | currency: 'EUR'}}</mat-card-content>
+<mat-card-content *ngIf="type == kpiTypes.Money" [ngClass]="{'green-value': value >= 0, 'red-value': value < 0}" >{{value | currency: 'EUR'}}</mat-card-content>
 </mat-card>
