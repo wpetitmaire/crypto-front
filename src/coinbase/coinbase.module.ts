@@ -7,6 +7,9 @@ import {MatTableModule} from "@angular/material/table";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {UtilsModule} from "../Utils/Utils.module";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {UtilsModule} from "../Utils/Utils.module";
     MatTableModule,
     FlexLayoutModule,
     FontAwesomeModule,
-    UtilsModule
+    UtilsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ]
 })
 export class CoinbaseModule {

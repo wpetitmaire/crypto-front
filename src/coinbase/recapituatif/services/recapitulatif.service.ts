@@ -19,19 +19,27 @@ export class RecapitulatifService {
   constructor(private http: HttpClient) {
   }
 
-  getCurrenciesHealth(): Observable<CoinbaseRecap[]> {
+  getCurrenciesHealth(forceRefresh: boolean): Observable<CoinbaseRecap[]> {
     console.log("--> RecapitulatifService.getGlobalRecap()")
+    console.log(forceRefresh)
 
-    const params = new HttpParams().set('withoutEmptyAccounts', true);
+    let params = new HttpParams()
+      .set('withoutEmptyAccounts', true);
+
+    if (forceRefresh)
+      params = params.append('forceRefresh', forceRefresh);
 
     return this.http.get<CoinbaseRecap[]>(`${RecapitulatifService.SERVER_URL}${RecapitulatifService.GET_URL_CURRENCIES_HEALTH}`, { params });
   }
 
-  getWalletHealth(): Observable<WalletRecap> {
+  getWalletHealth(forceRefresh: boolean): Observable<WalletRecap> {
     console.log("-->getWalletHealth");
+    console.log(forceRefresh)
 
-    // const params = new HttpParams().set('forceRefresh', false);
-    const params = undefined;
+    let params = new HttpParams();
+
+    if (forceRefresh)
+      params = params.append('forceRefresh', true);
 
     return this.http.get<WalletRecap>(`${RecapitulatifService.SERVER_URL}${RecapitulatifService.GET_URL_WALLET_HEALTH}`, { params });
   }

@@ -1,10 +1,18 @@
 
 <div fxLayout="row" fxLayoutAlign="space-between none" >
-  <kpi *ngIf="walletRecap" [libel]="'Profit/Perte'" [value]="walletRecap.walletBalanceWithoutFees" [type]="kpiType.Money" ></kpi>
+  <kpi *ngIf="walletRecap" [libel]="'Profit/Perte'" [value]="walletRecap.walletBalanceWithoutFees" [type]="kpiType.Money" [showColor]="true" ></kpi>
   <kpi *ngIf="walletRecap" [libel]="'Total achat'" [value]="walletRecap.buyTotal" [type]="kpiType.Money" ></kpi>
   <kpi *ngIf="walletRecap" [libel]="'Total vente'" [value]="walletRecap.sellTotal" [type]="kpiType.Money" ></kpi>
   <kpi *ngIf="walletRecap" [libel]="'Frais'" [value]="walletRecap.feeTotal" [type]="kpiType.Money" ></kpi>
-  <kpi *ngIf="walletRecap" [libel]="'Bilan'" [value]="walletRecap.walletBalance" [type]="kpiType.Money" ></kpi>
+  <kpi *ngIf="walletRecap" [libel]="'Bilan'" [value]="walletRecap.walletBalance" [type]="kpiType.Money" [showColor]="true"></kpi>
+</div>
+
+<div class="header-buttons-group">
+  <button mat-raised-button (click)="refreshData(true)" [disabled]="refreshingCurrencies">
+    <mat-icon *ngIf="refreshingCurrencies" ><mat-spinner diameter="20"></mat-spinner></mat-icon>
+    <mat-icon *ngIf="!refreshingCurrencies" >refresh</mat-icon>
+    Rafraîchir
+  </button>
 </div>
 
 <table mat-table [dataSource]="globalRecap" class="mat-elevation-z8">

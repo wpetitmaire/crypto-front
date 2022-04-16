@@ -17,7 +17,7 @@ export class KpiComponent implements OnInit {
   @Input() libel!: string;
   @Input() value!: number | string;
   @Input() type!: KpiType;
-  @Input() showColor = true;
+  @Input() showColor = false;
 
   kpiTypes = KpiType;
 
